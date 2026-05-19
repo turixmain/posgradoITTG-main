@@ -28,7 +28,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-
+STATIC_ROOT = BASE_DIR / 'staticfiles'
 # Application definition
 
 DJANGO_APPS = [
