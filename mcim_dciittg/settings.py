@@ -97,16 +97,30 @@ WSGI_APPLICATION = 'mcim_dciittg.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'hgcrespo_dciittg',
-        'USER': 'hgcrespo',
-        'PASSWORD': '_Crespo_2772',
-        'HOST': 'localhost',
-        'PORT': '3306',
+import dj_database_url
+import os
+DATABASE_URL = os.environ.get('DATABASE_URL')
+
+if DATABASE_URL:
+    # Render (PostgreSQL)
+    DATABASES = {
+        'default': dj_database_url.config(
+            default=DATABASE_URL,
+            conn_max_age=600
+        )
     }
-}
+else:
+    # Local (MySQL)
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': 'hgcrespo_dciittg',
+            'USER': 'hgcrespo',
+            'PASSWORD': '_Crespo_2772',
+            'HOST': 'localhost',
+            'PORT': '3306',
+        }
+    }
 
 
 # Password validation
