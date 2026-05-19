@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Vinculación
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+{% block navbar %}
+    {% include 'components/maestria/navbar.html' %}
+{% endblock%}
+
+{% block content %}
+<div class="container emp-profile">
+    <div class="row">
+        <p class="p-1" align="justify" style="color: rgb(39, 61,116); margin-left: 15px;"><strong>Vinculación</strong></p>
+        <p class="p-1" align="justify" style="margin-left: 15px;">
+            La vinculación se mantiene de manera constante con la finalidad de potenciar 
+            nuestras fortalezas con las de las empresas e instituciones. Así, varios de nuestros
+            proyectos de investigación se encuentran asociados con empresas y organismos, y para 
+            otros en desarrollo se buscan asociaciones para la aplicación o el trabajo conjunto interinstitucional y multidisciplinario.
+        </p><br><br>
+        <p class="p-1" align="justify" style="margin-left: 15px;">
+            La vinculación del posgrado se ha dado con empresas, centros de 
+            investigación, instituciones gubernamentales y otras instituciones de 
+            educación superior, teniendo como principales objetivos el desarrollo de 
+            proyectos de investigación, innovación y desarrollo tecnológico; incluyendo 
+            siempre de manera preponderante la formación de recursos humanos de posgrados 
+            de alto nivel.
+        </p><br><br>
+        <p class="p-1" align="justify" style="color: rgb(39, 61,116); margin-left: 15px;"><strong>Beneficios</strong></p>
+        <p class="p-1" align="justify" style="margin-left: 15px;">
+            La MCIM es un programa que busca continuamente la vinculación con el sector 
+            productivo público, privado y otros posgrados a nivel local y regional para 
+            fortalecer los lazos de colaboración con los actores de la sociedad; estos 
+            convenios de colaboración son el marco macro y especifico, respectivamente; 
+            con ellos, los beneficios tangibles que buscamos son la participación de los 
+            estudiantes e investigadores del posgrado en proyectos de investigación y/o 
+            aplicación que permiten adquirir el conocimiento en la solución de problemas, 
+            co-financiamiento de los proyectos de tesis, co-direcciones de tesis internos y 
+            externos con centros de investigación (CINVESTAV, UNAM, INAOE, CENIDET, UNICACH, 
+            UNACH). En consecuencia, estas colaboraciones contribuyen a la generación de ideas 
+            motoras para la realización de tesis a nivel maestría, lo cual impacta en la 
+            formación profesional del estudiante, quien adquiere experiencia, genera aplicación 
+            del conocimiento en los proyectos específicos. Importante desacatar que algunos de 
+            nuestros egresados han encontrado nichos de oportunidad en los centros de 
+            investigación donde han realizado su estancia.
+        </p><br><br>
+    </div>
+    <p class="p-1" align="justify" style="color: rgb(39, 61,116);"><strong>Coordinador</strong></p>
+    <p class="p-1" align="justify">
+        Dr. Rubén Grajales Coutiño<br>
+        I.T. de Tuxtla Gutiérrez<br>
+        Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+        Correo electrónico: <a href="mailto:posgrado.mcim@tuxtla.tecnm.mx">posgrado.mcim@tuxtla.tecnm.mx<a><br>
+        Teléfono: <a href="tel:9616150461" >9616150380</a> Ext. 325.
+    </p>
+</div>
+{% endblock%}
+
+{% block footer %}
+    {% include 'components/maestria/footer.html'%}
+{% endblock %}

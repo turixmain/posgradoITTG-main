@@ -1,0 +1,10 @@
+
+.grid-item {
+    width: 250px;
+    cursor: zoom-in;
+    background-color: #cfcfcf;
+}
+
+.grid-item:hover {
+    filter: opacity(0.8);
+}

@@ -1,0 +1,69 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% load crispy_forms_tags %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+{% endblock %}
+
+{% block title %}
+    Iniciar Sesión
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center">
+    <div class="col-lg-4 col-md-6 col-sm-8 col-xxl-4 col-xl-4">
+        <div class="card">
+        {% if form.errors %}
+            <div class="alert alert-danger alert-dismissible">
+            <button class="close" data-dismiss="alert"><span>&times;</span></button>
+                Tu nombre de usuario o contraseña no coinciden. Inténtalo de nuevo.
+            </div>
+        {% endif %}
+            <div class="card-body">
+                <div class="text-center">
+                    <img class="mb-4 rounded mx-auto d-block" src="{% static 'img/tecnm.jpg' %}" width="100" height="100">
+                </div>
+                {% if next %}
+                    {% if user.is_authenticated %}
+                        <div class="alert alert-warning alert-dismissible">
+                            <button class="close" data-dismiss="alert"><span>&times;</span></button>
+                                ¡Ya tienes tu sesión iniciada!
+                        </div>
+                    {% else %}
+                        <div class="alert alert-warning alert-dismissible">
+                            <button class="close" data-dismiss="alert"><span>&times;</span></button>
+                                Por favor, inicia sesión para administrar el sistema.
+                        </div>
+                    {% endif %}
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <div class="alert alert-warning alert-dismissible">
+                        <button class="close" data-dismiss="alert"><span>&times;</span></button>
+                            ¡Ya tienes tu sesión iniciada! 
+                    </div>
+                {% endif %}
+                <form method="post" action="{% url 'login' %}">
+                {% csrf_token %}
+                    {{ form.username|as_crispy_field }}
+                    {{ form.password|as_crispy_field }}                    
+                    <button class="btn btn-lg btn-primary btn-block" type="submit" value="{{ next }}">Iniciar Sesión</button>
+                </form>
+                <br>
+                <p><a href="{% url 'password-reset' %}">¿Olvidaste tu contraseña?</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script>
+    $('.alert').fadeIn();     
+    setTimeout(function() {
+       $(".alert").fadeOut();           
+    },2000);
+</script>
+{% endblock %}

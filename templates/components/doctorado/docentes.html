@@ -1,0 +1,144 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block navbar%}
+    {% include 'components/doctorado/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4" align="center">
+    <div class="container">
+        <h1 align="center" class="mt-2" style="color: rgb(39, 61,116);"><strong>Docentes del Núcleo Académico Básico</strong></h1>
+    </div>
+</div>
+{% for a in docentes %}
+<div class="fte-tab table-responsive mt-4 mb-4">
+    <div class="container" align="left">
+        <div class="container">
+            <h3 align="left" class="mt-2" style="color: rgb(39, 61,116);"><strong>Docentes de {{ a.nombre }}</strong></h3>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="table-active">
+                    <tr class="text-center font-weight-bold">
+                    <th>Docente</th>
+                    <th>Formación Profesional</th>
+                    <th>Expertise</th>
+                    <th>SNI</th>
+                    <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody class="container-fluid tableH1">
+                    {% for docente in a.docentes.all %}
+                    {% if docente %}
+                    <tr class="table" onclick="window.location.href='{% url 'docente-profile' pk=docente.id %}'">
+                        <td class="text-center"><a><strong>{{ docente.grado }}. {{ docente.nombre }} {{ docente.apellidos }}</strong></a></td>
+                        {% if docente.formacion_profesional %}     
+                            <td class="text-center"><STRONG>{{ docente.formacion_profesional }}</STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                        {% if docente.expertise %}     
+                            <td class="text-center"><STRONG>{{ docente.expertise }}</STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                        {% if docente.sni %}     
+                            <td class="text-center"><STRONG>{{ docente.sni }}</STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                        {% if docente.email %}     
+                            <td class="text-center"><STRONG><a href="mailto:{{ docente.email }}">{{ docente.email }}</a></STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>  
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% for b in maestros %}
+<div class="fte-tab table-responsive mt-4 mb-4">
+    <div class="container" align="left">
+        <div class="container">
+            <h3 align="left" class="mt-2" style="color: rgb(39, 61,116);"><strong>Docentes de {{ b.nombre }}</strong></h3>
+        </div>
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="table-active">
+                    <tr class="text-center font-weight-bold">
+                    <th>Docente</th>
+                    <th>Formación Profesional</th>
+                    <th>Expertise</th>
+                    <th>SNI</th>
+                    <th>Correo</th>
+                    </tr>
+                </thead>
+                <tbody class="container-fluid tableH1">
+                    {% for maestro in b.docentes.all %}
+                    {% if maestro %}
+                    <tr class="table" onclick="window.location.href='{% url 'docente-profile' pk=maestro.id %}'">
+                        <td class="text-center"><a><strong>{{ maestro.grado }}. {{ maestro.nombre }} {{ maestro.apellidos }}</strong></a></td>
+                        {% if maestro.formacion_profesional %}     
+                            <td class="text-center"><STRONG>{{ maestro.formacion_profesional }}</STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                        {% if maestro.expertise %}     
+                            <td class="text-center"><STRONG>{{ maestro.expertise }}</STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                        {% if maestro.sni %}     
+                            <td class="text-center"><STRONG>{{ maestro.sni }}</STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                        {% if maestro.email %}     
+                            <td class="text-center"><STRONG><a href="mailto:{{ maestro.email }}">{{ maestro.email }}</a></STRONG></td>
+                        {% else %}
+                            <td class="text-center"><STRONG>-</STRONG></td>
+                        {% endif %}
+                    </tr>
+                    {% endif %}
+                    {% endfor %}
+                </tbody>
+            </table>  
+        </div>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
+
+{% block footer %}
+    {% include 'components/doctorado/footer.html' %}
+{% endblock%}
+
+{% block css%}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style2.css' %}">
+
+    <style type="text/css">
+      .tableH1 tr:hover {
+        background-color: #F5B041;
+        cursor: pointer;
+      }
+    </style>
+{% endblock%}
+
+{% block js %}
+<script>
+    function mostrarOcultarTablas(id){
+    mostrado=0;
+    elem = document.getElementById(id);
+    if(elem.style.display == 'block')mostrado=1;
+    elem.style.display='none';
+    if(mostrado!=1)elem.style.display='block';
+    }
+</script>
+{% endblock %}

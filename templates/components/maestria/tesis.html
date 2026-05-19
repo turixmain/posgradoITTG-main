@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+
+{% block title %}
+  Tesis Disponibles
+{% endblock %}
+
+{% block navbar %}
+  {% include "components/maestria/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container emp-profile">
+    <div class="row justify-content-center align-items-center">
+        <div class="container">
+            {% for n in tesis %}
+            <p class="text-3">{{ n.lugar }}</p>
+            <div class="mb-3 card">
+                <div class="card-body">
+                    <div class="row">
+                        {% if n.asignada == False %}
+                        <div class="col-md-3 col-sm-3 col-lg-3">
+                                {% if n.imagen %}
+                                <div class="profile-img">
+                                    <img class="mb-4 rounded mx-auto d-block" width="200" height="200" src="{{ n.imagen.url }}" alt="{{ n.nombre }}"/>
+                                </div>
+                                {% endif %}
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-lg-9">
+                            <div class="profile-head">
+                                <strong><p class="text-3 text-center" style="color: rgb(39, 61,116);">{{ n.nombre }}</p></strong>
+                                <p class="text-3">{{ n.descripcion|safe }}</p>
+                                {% if n.documento %}
+                                <a href="{{ n.documento.url }}" target="_blank" style="color:black;">Ver información completa</a>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/maestria/footer.html" %}
+{% endblock %}

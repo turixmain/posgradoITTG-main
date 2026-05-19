@@ -1,0 +1,51 @@
+.div{
+  margin: 0 auto;
+  font-size: 11px;
+  text-align: center;
+}
+.a{
+  font-family: 'Montserrat', arial;
+  font-size: 12px;
+}
+
+
+@import url(http://allfont.es/allfont.css?fonts=montserrat);
+
+
+body {
+    font-family: 'Montserrat', arial;
+    font-size: 12px;
+  }
+
+
+.card1 {
+  width:200px;
+  height:200px;
+  border-radius:130px;
+}
+
+.card2 {
+  width:200px;
+  height:200px;
+  border-radius:130px;
+}
+
+.card3 {
+  width:200px;
+  height:200px;
+  border-radius:130px;
+}
+
+
+.dropdown-menu a {
+float: none;
+color: black;
+padding: 10px 14px;
+text-decoration: none;
+display: block;
+text-align: left;
+}
+
+.dropdown-menu a:hover {
+background-color: rgb(1,78,130);
+}

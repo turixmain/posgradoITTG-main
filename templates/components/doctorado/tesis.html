@@ -1,0 +1,94 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+
+{% block title %}
+  Tesis Disponibles
+{% endblock %}
+
+{% block navbar %}
+  {% include "components/doctorado/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container emp-profile">
+    <div class="row justify-content-center align-items-center">
+        <div class="container">
+            {% for n in tesis %}
+            <div class="mb-3 card">
+                <div class="card-body">
+                    <div class="row">
+                        {% if n.asignada == False %}
+                        {% if n.imagen %}
+                        <div class="col-md-4 col-sm-4 col-lg-4">
+                            <div class="profile-img">
+                                <img class="mb-4 rounded mx-auto d-block" width="200" height="200" src="{{ n.imagen.url }}" alt="{{ n.nombre }}"/>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" href="#{{n.nombre}}" role="button" aria-expanded="false" aria-controls="{{n.nombre}}">
+                        <div class="col-md-8 col-sm-8 col-lg-8">
+                            <div class="profile-head">
+                                <strong><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Propuesta:</strong> {{ n.nombre }}</p>
+                                <strong><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Responsable(s):</strong> {{ n.responsable|safe }}</p>
+                                <strong><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Sede:</strong> {{ n.lugar }}</p>
+                                <strong><a class="text-right"  style="color: rgb(39, 61,116);" href="mailto:{{n.email}}"><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Contacto: </strong>{{ n.email }}</p></a>
+                            </div>
+                        </a>
+                            <div class="collapse" id="{{n.nombre}}">
+                                {% if n.descripcion %}
+                                    <p class="text-3 text-justify">{{ n.descripcion|safe }}</p>
+                                {% else %}
+                                    <p class="text-3 text-justify">{{ n.abstract|safe }}</p>
+                                {% endif %}
+                                {% if n.documento %}
+                                <strong><a class="text-right" href="{{ n.documento.url }}" target="_blank" style="color: rgb(39, 61,116);">Download Full Proposal</a></strong>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% else %}
+                        <div class="col-md-4 col-sm-4 col-lg-4">
+                            <div class="profile-img">
+                                <img class="mb-4 rounded mx-auto d-block" width="200" height="200" src="https://via.placeholder.com/200x200?text=Not+Found" alt="{{ n.nombre }}"/>
+                            </div>
+                        </div>
+                        <a data-toggle="collapse" href="#{{n.nombre}}" role="button" aria-expanded="false" aria-controls="{{n.nombre}}">
+                        <div class="col-md-8 col-sm-8 col-lg-8">
+                            <div class="profile-head">
+                                <strong><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Propuesta:</strong> {{ n.nombre }}</p>
+                                <strong><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Responsable(s):</strong> {{ n.responsable|safe }}</p>
+                                <strong><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Sede:</strong> {{ n.lugar }}</p>
+                                <strong><a style="color: rgb(39, 61,116);" href="mailto:{{n.email}}"><p class="text-3 text-justify" style="color: rgb(39, 61,116);margin-bottom:5px;">Contacto: </strong>{{ n.email }}</p></a>
+                            </div>
+                        </a>
+                            <div class="collapse" id="{{n.nombre}}">
+                                {% if n.descripcion %}
+                                    <p class="text-3 text-justify">{{ n.descripcion|safe }}</p>
+                                {% else %}
+                                    <p class="text-3 text-justify">{{ n.abstract|safe }}</p>
+                                {% endif %}
+                                {% if n.documento %}
+                                <strong><a href="{{ n.documento.url }}" target="_blank" style="color: rgb(39, 61,116);">Download Full Proposal</a></strong>
+                                {% endif %}
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/doctorado/footer.html" %}
+{% endblock %}

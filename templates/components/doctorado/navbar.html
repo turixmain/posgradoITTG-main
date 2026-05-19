@@ -1,0 +1,91 @@
+  {% load static %}
+
+<nav class="cabe navbar navbar-expand-lg navbar-light fixed-top" style="background: rgb(39, 61,116); /*para que el menu quede encima de todo*/">
+  <a class="navbar-brand" href="{% url 'index-doctorado' %}">
+    <img src="{% static 'img/tecnm.jpg' %}" width="60" height="50" class="d-inline-block align-top rounded">
+    <img src="{% static 'img/pnpc.jpeg' %}" width="60" height="50" class="d-inline-block align-top rounded">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation" style="background-color: white">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mx-md-auto">
+    <div class="dropdown fte-t2">
+      <a class="nav-link text-white" href="{% url 'index-doctorado' %}" id="navbarDropdown" role="button" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);">
+        <strong>Inicio</strong>
+      </a>
+    </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);" data-hover="dropdown">
+          <strong>Investigadores</strong>
+        </a>
+          <div class="dropdown-menu fte-t2" aria-labelledby="navbarDropdown">
+            <li class="nav-item dropdown font-weight-bold">
+            <a class="dropdown-item" href="{% url 'docentes-doctorado' %}">Núcleo Académico Básico</a>
+            <a class="dropdown-item" href="{% url 'estudiantes-doctorado' %}">Estudiantes</a>
+            </li>
+          </div>
+      </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  text-white" href="{% url 'informacion-doctorado' %}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);">
+            <strong>Información del Programa</strong>
+        </a>
+      </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);">
+            <strong>Líneas de Investigación</strong>
+        </a>
+        <div class="dropdown-menu fte-t2" aria-labelledby="dropdownMenu">
+          <li class="nav-item font-weight-bold">
+            {% for linea_inv in lineas %}
+              <a class="dropdown-item" href="{% url  'linea-investigacion' pk=linea_inv.id %}">{{linea_inv.nombre}}</a>
+            {% endfor %}
+          </li>
+        </div>
+      </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);">
+            <strong>Vinculación</strong>
+        </a>
+        <div class="dropdown-menu fte-t2" aria-labelledby="dropdownMenu">
+          <li class="nav-item font-weight-bold">
+            <a class="dropdown-item" href="{% url 'colaboraciones-academicas' %}">Sitios de Interés</a>
+          </li>
+        </div>
+      </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);">
+            <strong>Laboratorios</strong>
+        </a>
+        <div class="dropdown-menu fte-t2" aria-labelledby="dropdownMenu">
+          <li class="nav-item font-weight-bold">
+          {% for lab in laboratorios %}
+            <a class="dropdown-item" href="{% url 'laboratorio' pk=lab.id %}">{{ lab.nombre }}</a>
+          {% endfor %}
+          </li>
+        </div>
+      </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  text-white" href="{% url 'galeria-doctorado' %}" role="button" data-toggle="" aria-expanded="false" style="background: rgb(39, 61,116);">
+          <strong>Galería Fotográfica</strong>
+        </a>
+      </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  text-white" href="{% url 'tutorias' %}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);">
+            <strong>Tutorias</strong>
+        </a>
+      </div>
+      <div class="dropdown fte-t2">
+        <a class="nav-link  text-white" href="{% url 'tesis-disponibles' %}" role="button" data-toggle="" aria-haspopup="true" aria-expanded="false" style="background: rgb(39, 61,116);">
+            <strong>Tesis disponibles</strong>
+        </a>
+      </div>
+    </ul>
+      <div class="dropdown dropdown-menu-right"><!--aqui pones inicia el menu de opciones de Configuracion-->
+        <a class="navbar-brand" href="{% url 'index-doctorado' %}">
+          <img src="{% static 'img/ittg.jpeg' %}" width="60" height="50" class="d-inline-block align-top rounded">
+          <img src="{% static 'img/ith.jpeg' %}" width="60" height="50" class="d-inline-block align-top rounded">
+        </a>
+      </div>
+  </div>
+</nav>

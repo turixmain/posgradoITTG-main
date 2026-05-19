@@ -1,0 +1,209 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Posgrado en Ciencias en Ingeniería del Instituto Tecnológico de Tuxtla Gutiérrez</title>
+  <link rel="shortcut icon" href="{% static 'shades/image/png/favicon.png' %}" type="image/x-icon">
+  <!-- Bootstrap , fonts & icons  -->
+  <link rel="stylesheet" href="{% static 'shades/css/bootstrap.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/fonts/icon-font/css/style.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/fonts/typography-font/typo.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/fonts/typography-font/lucida-grande/typo.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/fonts/fontawesome-5/css/all.css' %}">
+  <!-- Plugin'stylesheets  -->
+  <link rel="stylesheet" href="{% static 'shades/plugins/aos/aos.min.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/plugins/fancybox/jquery.fancybox.min.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/plugins/nice-select/nice-select.min.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/plugins/slick/slick.min.css' %}">
+  <!-- Vendor stylesheets  -->
+  <link rel="stylesheet" href="{% static 'shades/plugins/theme-mode-switcher/switcher-panel.css' %}">
+  <link rel="stylesheet" href="{% static 'shades/css/main.css' %}">
+  <!-- Custom stylesheet -->
+</head>
+
+<body data-theme="light">
+  <div class="site-wrapper overflow-hidden">
+    <!-- Header start  -->
+    <!-- Header Area -->
+    <header class="site-header site-header--menu-left sticky-bg-white light-mode-texts menu-link-hover-dodgerblue site-header--absolute site-header--sticky">
+      <div class="container">
+        <nav class="navbar site-navbar offcanvas-active navbar-expand-lg px-0">
+          <!-- Brand Logo-->
+          <div class="brand-logo d-inline-block">
+            <a href="https://tuxtla.tecnm.mx">
+              <!-- light version logo (logo must be black)-->
+              <img src="{% static 'img/ittg.jpeg' %}" alt="">
+              <!-- Dark version logo (logo must be White)-->
+            </a>
+          </div>
+          <div class="collapse navbar-collapse" id="mobile-menu">
+            <div class="navbar-nav-wrapper">
+              <ul class="navbar-nav main-menu">
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'index-maestria' %}">Maestría en Ciencias en Ingeniería Mecatrónica</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'index-doctorado' %}" role="button" aria-expanded="false">Doctorado en Ciencias en Ingeniería</a>
+                </li>
+              </ul>
+            </div>
+            <button class="d-block d-lg-none offcanvas-btn-close" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="true" aria-label="Toggle navigation">
+              <i class="gr-cross-icon"></i>
+            </button>
+          </div>
+          <!-- <div class="header-btns ml-auto pr-2 ml-lg-9 d-none d-xs-flex">
+            <a class="btn btn-transparent btn-small border border-mineshaft font-size-5 letter-spacing-n1 font-weight-normal heading-default-color focus-reset mr-lg-6 mr-lg-0 mr-6" href="{% url 'login' %}">
+              Login
+            </a>
+          </div> -->
+          <!-- Mobile Menu Hamburger-->
+          <button class="navbar-toggler btn-close-off-canvas  hamburger-icon border-0" type="button" data-toggle="collapse" data-target="#mobile-menu" aria-controls="mobile-menu" aria-expanded="false" aria-label="Toggle navigation">
+            <!-- <i class="icon icon-simple-remove icon-close"></i> -->
+            <span class="hamburger hamburger--squeeze js-hamburger">
+          <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+            </span>
+            </span>
+          </button>
+          <!--/.Mobile Menu Hamburger Ends-->
+        </nav>
+      </div>
+    </header>
+    <!-- navbar- -->
+    
+    <!-- content-1 section start -->
+<!-- Programas -->
+<div class="py-lg-25 py-15">
+  <div class="container">
+    
+    <div class="row justify-content-center">
+
+      <!-- MCIM -->
+      <div class="col-lg-6 col-md-6 col-sm-12 mb-5"
+           data-aos="fade-right"
+           data-aos-duration="800">
+
+        <div class="text-center px-4">
+
+          <h2 class="font-size-12 font-family-1 line-height-1p3 font-wieght-bold mb-6">
+            <a href="{% url 'index-maestria' %}">
+              Maestría en Ciencias en Ingeniería Mecatrónica
+            </a>
+          </h2>
+
+          <p class="font-size-7 mb-8">
+            La Maestría en Ciencias en Ingeniería Mecatrónica (MCIM)
+            del Instituto Tecnológico de Tuxtla Gutiérrez (ITTG)
+            es uno de los posgrados más importantes del estado de Chiapas.
+          </p>
+
+          <a href="{% url 'index-maestria' %}">
+            <img src="{% static 'img/mcim.png' %}"
+                 alt="MCIM"
+                 class="img-fluid">
+          </a>
+
+        </div>
+      </div>
+
+      <!-- DCI -->
+      <div class="col-lg-6 col-md-6 col-sm-12"
+           data-aos="fade-left"
+           data-aos-duration="800">
+
+        <div class="text-center px-4">
+
+          <h2 class="font-size-12 font-family-1 line-height-1p3 font-wieght-bold mb-6">
+            <a href="{% url 'index-doctorado' %}">
+              Doctorado en Ciencias en Ingeniería
+            </a>
+          </h2>
+
+          <p class="font-size-7 mb-8">
+            El Doctorado en Ciencias en Ingeniería entre el Instituto
+            Tecnológico de Tuxtla Gutiérrez (ITTG) y el Instituto
+            Tecnológico de Hermosillo (ITH) fortalece la formación
+            de recurso humano de alto nivel.
+          </p>
+
+          <a href="{% url 'index-doctorado' %}">
+            <img src="{% static 'img/dci.png' %}"
+                 alt="DCI"
+                 class="img-fluid">
+          </a>
+
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+    <!-- content-2 section end -->
+    <!-- footer-header start -->
+    <div class=" position-relative site-header--menu-center scrolling reveal-header pt-6 pb-5">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-12 px-0">
+            <nav class="navbar site-navbar d-md-flex d-block text-center px-0">
+              <!-- Brand Logo start-->
+              <div class="brand-logo">
+                <a href="https://tuxtla.tecnm.mx">
+                  <!-- light version logo (logo must be black)-->
+                  <img src="{% static 'img/ittg.jpeg' %}" alt="" class="light-version-logo">
+                  <!-- Dark version logo (logo must be White)-->
+                </a>
+              </div>
+              <div class="row text-center" style="margin-left:200px;">
+                <i class="fas fa-map-marked-alt fa-lg" style="margin-right:10px;"></i><a style="margin-top: -10px;" href="https://goo.gl/maps/zGgrtY15mydNnULD7">Carretera Panamericana Km. 1080, <br> C.P. 29050, Apartado Postal: 599</a>
+              </div>
+              <div class="ml-auto pr-2 ml-lg-12 ml-md-0">
+                <!-- widget social icon start -->
+                <div class="social-icons">
+                  <!-- widget social icon list start -->
+                  <ul class="pl-0 list-unstyled mb-lg-6 mb-0">
+                    <li class="d-inline-block px-3 ml-3"><a class="fte-t7" href="https://es-la.facebook.com/dciittg/" ><i class="fab fa-facebook-f fa-sm fa-2x"></i></a></li>
+                    <li class="d-inline-block px-3 ml-3"><a class="fte-t7" href="https://www.instagram.com/tecnmtuxtlagtz/?hl=es" ><i class="fab fa-instagram fa-sm fa-2x" style="margin-left:10px"></i></a></li>
+                    <li class="d-inline-block px-3 ml-3"><a class="fte-t7" href="https://twitter.com/tecnmtuxtlagtz?lang=es" ><i class="fab fa-twitter fa-sm fa-2x" style="margin-left:10px"></i></a></li>
+                    <li class="d-inline-block px-3 ml-3"><a class="fte-t7" href="https://www.tuxtla.tecnm.mx/" ><i class="fas fa-globe-americas fa-sm fa-2x" style="margin-left:10px"></i></a></li>
+                  </ul>
+                  <!-- widget social icon list end -->
+                </div>
+                <!-- widget social icon end -->
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- cta section -->
+    <footer class="footerpt-lg-8 pb-9">
+      <div class="container">
+        <div class="row text-center">
+          <div class="col-12">
+            <p class="font-size-4 letter-spacing-np64 line-height-reset mb-0"> &copy; Instituto Tecnológico de Tuxlta Gutiérrez 2021 All right reserved. </p>
+          </div>
+        </div>
+      </div>
+    </footer>
+  </div>
+  <!-- Vendor Scripts -->
+  <script src="{% static 'shades/js/vendor.min.js' %}"></script>
+  <!-- Plugin's Scripts -->
+  <script src="{% static 'shades/plugins/fancybox/jquery.fancybox.min.js' %}"></script>
+  <script src="{% static 'shades/plugins/nice-select/jquery.nice-select.min.js' %}"></script>
+  <script src="{% static 'shades/plugins/aos/aos.min.js' %}"></script>
+  <script src="{% static 'shades/plugins/slick/slick.min.js' %}"></script>
+  <script src="{% static 'shades/plugins/counter-up/jquery.waypoints.js' %}"></script>
+  <script src="{% static 'shades/plugins/counter-up/jquery.counterup.js' %}"></script>
+  <script src="{% static 'shades/plugins/theme-mode-switcher/gr-theme-mode-switcher.js' %}"></script>
+  <!-- Activation Script -->
+  <script src="{% static 'shades/js/custom.js' %}"></script>
+</body>
+
+</html>

@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+{% endblock %}
+
+{% block title %}
+    Sesión cerrada
+{% endblock %}
+
+{% block content %}
+<div class="row justify-content-center align-items-center">
+    <div class="col-lg-8 col-md-8 col-sm-8 col-xxl-8 col-xl-8">
+        <div class="card">
+            <div class="card-body">
+                <div class="text-lg-center text-md-center text-sm-center">
+                    <img class="mb-4 rounded mx-auto d-block" src="{% static 'img/tecnm.jpg' %}" width="140" height="140">
+                </div>
+                <div class="text-lg-center text-md-center text-sm-center">
+                    <p style="font-size: 18px; text-align:justify;">
+                        Has cerrado tu sesión.
+                    </p>
+                    <p style="font-size: 18px; text-align:justify;">
+                        Gracias por utilizar la plataforma de posgrados!
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,415 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+{% endblock %}
+
+{% block title %}
+    Doctorado en Ciencias de la Ingeniería
+{% endblock %}
+
+{% block navbar %}
+    {% include "components/doctorado/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4">
+    <div class="text-center">
+        <img width="90%" height="70%" class="img-fluid" alt="Responsive image" src="{% static 'img/dci_pnpc.jpg' %}">
+    </div>            
+    <br>
+    <div class="w3-bar tab text-white p-1" style="background: rgb(39, 61,116);">
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs1')">Objetivos</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs7')">Misión y Visión</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs2')">Plan de estudios</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs3')">Perfil Ingreso</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs4')">Perfil Egreso</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs5')">Requisito de Ingreso</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs6')">Procedimiento de Selección</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs8')">Vinculación</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs9')">Contactos</button>
+        <button class="w3-bar-item w3-button" onclick="openCity('tabs10')">Documentos y Formatos</button>
+    </div>
+
+    <div id="tabs1" class="w3-container city p-1">
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>Objetivos Generales y Específicos</strong></h5> 
+        <p>
+            <ul>
+                <li><p class="p-1 justificar" align="justify">
+                    Formar investigadores con amplios y profundos conocimientos en el estado del arte 
+                    de su disciplina, con destrezas intelectuales y metodológicas que les permitan realizar 
+                    investigación competitiva y generar aportaciones relevantes en su campo de acción, 
+                    con la capacidad de innovación en el desarrollo de proyectos de impacto social, 
+                    científico y tecnológico.    
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    Formar investigadores que sean capaces de trabajar interdisciplinaria y 
+                    multidisciplinariamente e integrando disciplinas que contemplan la instrumentación, automatización 
+                    y control para el aprovechamiento de energías renovables y limpias. Así como el desarrollo de sistemas 
+                    mecatrónicos que contribuyan al crecimiento tecnológico, económico, ambiental y sustentable de la región.      
+            </p></li>
+            </ul>
+        </p>
+    </div>
+    <div id="tabs2" class="w3-container city p-1" style="display:none">
+      <h5 class="p-1" style="color: rgb(39, 61,116);">Plan de Estudios</h5>
+        <ul>
+            <li>Duración del plan de estudio: 48 meses</li>
+            <li>Período Lectivo: Semestral, con dos períodos de veintiún semanas cada uno</li>
+            <li>Ingreso al Programa: Bianual, el año escolar inicia en el mes de agosto y enero</li> 
+            <li>No. de semestres: 08</li>
+        </ul>  
+        <div class="table-responsive fte-tabp p-1">
+            <table class="table table-hover table-bordered">
+                <thead>
+                    <th><b>Estructura académica</b></th>
+                    <th>DOC horas</th>
+                    <th>TIS horas</th>
+                    <th>TPS horas</th>
+                    <th>Horas totales</th>
+                    <th>Créditos</th>
+                </thead>
+                <tbody class="container-fluid">
+                    <tr class="alternar">
+                        <td><b>Seminario de investigación.</b></td>
+                        <td class="centro">16</td>
+                        <td class="centro">300</td>
+                        <td class="centro">0</td>
+                        <td class="centro">316</td>
+                        <td class="centro">16</td>
+                    </tr>
+                    <tr>
+                        <td>Seminario predoctoral.*</td>
+                        <td class="centro">0</td>
+                        <td class="centro">160</td>
+                        <td class="centro">0</td>  
+                        <td class="centro">160</td> 
+                        <td class="centro">8</td>     
+                    </tr>
+                    <tr class="alternar">
+                        <td><b>Proyecto de investigación I</b></td>
+                        <td class="centro">16</td>
+                        <td class="centro">300</td>
+                        <td class="centro">0</td>
+                        <td class="centro">316</td>
+                        <td class="centro">16</td>
+                    </tr>
+                    <tr>
+                        <td>Proyecto de investigación II</td>
+                        <td class="centro">16</td>
+                        <td class="centro">300</td>
+                        <td class="centro">0</td> 
+                        <td class="centro">316</td> 
+                        <td class="centro">16</td>      
+                    </tr>
+                    <tr class="alternar">
+                        <td><b>Proyecto de investigación III</b></td>
+                        <td class="centro">16</td>
+                        <td class="centro">300</td>
+                        <td class="centro">0</td>
+                        <td class="centro">316</td>
+                        <td class="centro">16</td>
+                    </tr>
+                    <tr>
+                        <td>Proyecto de investigación IV</td>
+                        <td class="centro">16</td>
+                        <td class="centro">300</td>
+                        <td class="centro">0</td> 
+                        <td class="centro">316</td> 
+                        <td class="centro">16</td>      
+                    </tr>
+                    <tr class="alternar">
+                        <td><b>Examen predoctoral**</b></td>
+                        <td class="centro">0</td>
+                        <td class="centro">160</td>
+                        <td class="centro">0</td>
+                        <td class="centro">160</td>
+                        <td class="centro">8</td>
+                    </tr>
+                    <tr>
+                        <td>Proyecto de investigación V</td>
+                        <td class="centro">16</td>
+                        <td class="centro">300</td>
+                        <td class="centro">0</td> 
+                        <td class="centro">316</td> 
+                        <td class="centro">16</td>      
+                    </tr>
+                    <tr class="alternar">
+                        <td><b>Tesis***</b></td>
+                        <td class="centro">0</td>
+                        <td class="centro">1040</td>
+                        <td class="centro">0</td>
+                        <td class="centro">1040</td>
+                        <td class="centro">52</td>
+                    </tr>
+                    <tr>
+                        <td>Total</td>
+                        <td class="centro"></td>
+                        <td class="centro"></td>
+                        <td class="centro"></td>  
+                        <td class="centro">2936</td>  
+                        <td class="centro">164</td>     
+                    </tr>
+                </tbody>
+            </table>  
+        </div>
+        <p class="justificar" align="justify">* En el seminario Seminario Predoctoral el candidato presentará ante ante el Comité Tutorial 
+            la propuesta en extensa de su proyecto de investigación, para evaluar la pertinencia y originalidad, 
+            características que deberá estar fundamentada en una revisión exhaustiva y detallada del estado 
+            del arte, la originalidad de su proyecto de investigación, el dictamen del comité podrá ser 
+            de aprobado o no aprobado. Si el dictamen es aprobado el doctorante podrá continuar con las materias 
+            señaladas en el plan de estudios. En caso contrario el comité podrá emitir uno de los fallos siguientes
+            <ol>
+                <li>Prorroga: El estudiante repetirá el seminario, por una sola vez más, en un plazo no mayor de seis meses, considerando todas las observaciones emitidas por el comité tutorial.</li>
+                <li>Baja: el estudiante causará baja inmediata del programa del posgrado. </li>
+            </ol>
+                El fallo del comité tutorial es de carácter inapelable. 
+            </p>
+            <p class="justificar" align="justify">** En el seminario examen predoctoral el candidato presentará ante ante el Comité Tutorial los resultados 
+            de su proyecto de investigación, los cuales deberán demostrar originalidad y contribución al 
+            estado del arte de su disciplina. El dictamen del comité podrá ser de aprobado o no aprobado. 
+            Si el dictamen es aprobado el doctorante podrá continuar con la redacción de la tesis y 
+            presentación del examen de grado. En caso contrario el comité podrá emitir uno de los fallos siguientes
+            <ol>
+                <li>Prorroga: El estudiante repetirá el examen en un plazo no mayor de seis meses, considerando todas las observaciones emitidas por el comité tutorial.</li>
+                <li>Baja: el estudiante causará baja inmediata del programa del posgrado. </li>
+            </ol>   
+                El fallo del comité tutorial es de carácter inapelable. 
+            </p>
+            <p class="justificar" align="justify">*** Tesis: La tesis consiste en la presentación detallada de los resultados de la investigación escritas 
+            en lenguaje científico. Dicho documento deberá ser avalado primeramente por el director y 
+            co-director de tesis, y en segundo término por los integrantes restantes del comité tutorial. 
+            Será acreditada por la defensa y aprobación del examen de grado de Doctor ante el Jurado correspondiente. 
+            Para poder presentar dicho examen el doctorante deberá contar con al menos una publicación científica en 
+            revista indizada en el Journal Citations Reports, de acuerdo a los lineamientos enmarcados por el TecNM y 
+            el CONACYT.<br /> 
+
+            Nomenclatura (16-300-0-16): (DOC-TIS-TPS-HT) DOC: Docencia; TIS: Trabajo Independiente Significativo; 
+            TPS: Trabajo Profesional Supervisado; HT: Horas
+        </p>
+    </div>
+    <div id="tabs3" class="w3-container city p-1" style="display:none">
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>Perfil de Ingreso</strong></h5>
+        <p class="p-1 justificar" align="justify">
+            El programa está dirigido a investigadores, profesores de 
+            enseñanza superior, ingenieros del sector productivo, poseedores del grado de maestros en ciencias 
+            o equivalente en  Electrónica, Sistemas Computacionales, Mecánica, Mecatrónica, Eléctrica, y 
+            programas afines, además cuente con con competencias, habilidades, valores y conocimientos que 
+            permitan evidenciar aptitudes para la investigación, innovación y desarrollo de proyectos de alto impacto. 
+        </p>
+    </div>
+    <div id="tabs4" class="w3-container city p-1" style="display:none">
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>Perfil de Egreso</strong></h5>
+        <p class="p-1 justificar" align="justify">
+            El egresado del doctorado en Ciencias en Ingenierías será capaz 
+            de generar conocimientos científicos y tecnológicos a través del planteamiento y desarrollo de trabajo 
+            de investigación en las áreas de automatización y control, sistemas mecatrónicos, aprovechamiento y 
+            optimización de energías renovables y limpias, además contar con las siguientes competencias:
+        </p>
+        <p>
+            <ul>
+                <li>Capacidad para conducir investigación original en el área de ingeniería de su especialidad.</li> 
+                <li>Formar recursos humanos de alto nivel con la capacidad de innovación en el desarrollo de proyectos de impacto social, científico y tecnológico.</li>
+                <li>Detectar y analizar problemas de relevancia en procesos productivos, planteando nuevas alternativas de solución.</li>
+                <li>Participar en actividades docentes a nivel de licenciatura y posgrado en instituciones de educación superior y en centros de investigación.</li>
+                <li>Dar asesoría y consultoría técnica al sector público y privado en el área de su especialidad.</li>
+            </ul>
+        </p>
+        <p>------------------------------------------------------------------</p>
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>Información para Extranjeros</strong></h5>
+        <p class="p-1 justificar" align="justify">
+            Además de los requisitos mencionados arriba, los candidatos extranjeros deberán cumplir con lo siguiente:
+        </p>
+        <p>
+            <ul>
+                <li>1. Se recomienda que el proceso de admisión se realicé al menos con cuatro meses de anticipación, puesto que deberán realizar trámites migratorios en las oficinas de relaciones exteriores.</li> 
+                <li>2. Los candidatos extranjeros están exentos del examen CENEVAL, pero deberán acreditar con un promedio mínimo de 80 el examen de matemáticas, el cual se les aplicará en línea. </li>
+                <li>3. Aprobar la defensa de la propuesta de doctorado, la cual se realizará en línea en alguna plataforma como MS Teams o Google Meet. </li>
+                <li>4. En caso de ser admitidos, con la carta de aceptación del programa deberán tramitar el documento migratorio que acredite su estancia en México, para lo cual deberán solicitar desde su país de origen el tipo de VISA RESIDENTE TEMPORAL ESTUDIANTE y a partir de su llegada al país tienen 180 días para efectuar el trámite ante el Instituto Nacional de Migración (INM); además se notificará a CONACyT para solicitar la beca de manutención.</li>
+                <li>5. A su ingreso a México deberán presentar  original y copia del documento migratorio que acredite su estancia en el país, así como los originales  mencionados en “Requisitos y Antecedentes de Ingreso de los Candidatos”.</li>
+            </ul>
+        </p>
+    </div>
+    <div id="tabs5" class="w3-container city p-1" style="display:none"><br>
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>!!!  Nota: Revisar la convocatoria actual desde el sitio <a href="https://www.tuxtla.tecnm.mx/">tuxtla.tecnm.mx</a>  !!!</strong></h5>
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>Requisitos de Admisión:</strong></h5>
+        <p>
+            <ol>
+                <li>Certificado de estudios de maestría con un promedio general mínimo de 80 o equivalente.</li>
+                <li>Título o acta de examen de maestría afín al área (original y copia).</li>
+                <li>2 cartas de recomendación académica dirigidas al Claustro Doctoral (original).</li>
+                <li>Curriculum Vitae actualizado con documentos probatorios (copias).</li>
+                <li>Carta de interés y exposición de motivos para ingresar al Doctorado, dirigida al Claustro Doctoral redactada
+                    en una cuartilla en formato libre, con firma del interesado (original).</li>
+                <li>Propuesta de Investigación del Proyecto de tesis, por lo que los aspirantes deben haber contactado
+                    previamente con un profesor del núcleo académico básico del doctorado. El proyecto debe estar avalado
+                    por el Director de tesis (solicitar formato en la coordinación).
+                </li>
+                <li>Constancia vigente de dominio del inglés con un mínimo de 450 puntos de TOEFL (original y copia).</li> 
+            </ol>
+        </p>
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>Requisitos de Ingreso:</strong></h5>
+        <p>
+            <ol>
+                <li>Formato de solicitud de ingreso.</li>
+                <li>Aprobar el examen EXANI III del CENEVAL con un mínimo de 1000 puntos.</li>
+                <li>Aprobar el examen de conocimientos (Maestría y Doctorado, solicitar temario en la coordinación respectiva).</li>
+                <li>Aprobar la defensa oral de la propuesta del proyecto de tesis que desarrollará en el Doctorado, ante el Comité de admisión al Doctorado con un tiempo de exposición de 20 minutos (el tiempo varía de acuerdo a la demanda).</li>
+                <li>Aprobar la entrevista de diagnóstico ante la comisión de admisión de Posgrado (Maestría y Doctorado). </li>
+                <li>Carta compromiso de exclusividad de dedicación de tiempo completo (Doctorado).</li>
+            </ol>
+        </p>
+    </div>
+    <div id="tabs6" class="w3-container city p-1" style="display:none"><br>
+        <p class="justificar" align="justify">
+            Se emite la convocatoria para participar en el proceso de admisión a estudiantes nacionales
+            y extranjeros, hasta dos veces al año, de acuerdo a las fechas establecidas en la 
+            convocatoria vigente. Para la difusión de la convocatoria de ingreso se utilizan medios de 
+            comunicación masiva como prensa escrita, radio y televisión, también se publica la convocatoria 
+            en el portal de Internet del Instituto Tecnológico de Tuxtla Gutiérrez y se envía a Universidades, 
+            Institutos Tecnológicos y Centros de Investigación; asimismo se participa en las Ferias de Posgrado.
+        </p>
+
+        <p class="justificar" align="justify">
+            El procedimiento de selección y admisión del aspirante a ingresar al Doctorado en Ciencias de la Ingeniería se desarrolla de acuerdo al siguientes etapas:
+        </p>
+        <ul>
+            <li>Fase 1:
+                <ul>
+                    <li><p class="justificar" align="justify">Examen: El aspirante presenta examen para valorar los conocimientos y habilidades.</p></li>
+                    <li><p class="justificar" align="justify">Primer contacto: Contactar a uno de los profesores del área de interés para proponer un trabajo que asegure un conocimiento del candidato en la línea de investigación del investigador. El candidato al programa doctoral debe enviar una carta de motivos, en donde exprese las razones que se tienen por realizar un doctorado en Ingenierías. Es indispensable anexar su Curriculum Vitae y copia de los documentos probatorios del mismo. La documentación probatoria podrá enviarse en linea mediante una cuenta en Dropbox, Google Drive, entre otros. </p></li>
+                    <li><p class="justificar" align="justify">Propuesta: Elaborar una propuesta de tema de investigación y el nombre del director de tesis con mayor afinidad al tema que describa, en forma clara y precisa, el proyecto a desarrollar. Esta propuesta se elaborará con la ayuda de su asesor y deberá indicar el problema a resolver. El candidato podrá proponer una propuesta nueva en conjunto con el asesor o seleccionar una de un banco de propuestas de investigación las cuales estarán publicadas en la página web del doctorado. </p></li>
+                </ul>
+            </li>  
+            <li>Fase 2:
+                <ul>
+                    <li><p class="justificar" align="justify">Presentación de propuesta: Una vez recibida y cotejada esta documentación se formará un comité de admisión, con especialistas del programa.  El aspirante deberá exponer su propuesta ante el comité de admisión donde se analizará el contenido y en caso de ser necesario se le harán sugerencias para que ésta sea complementada. </p></li>
+                    <li><p class="justificar" align="justify">Entrevista: Se fijará la fecha de la entrevista con el Comité.  La entrevista podrá  realizarse en linea mediante mediante videoconferencia con Skype, Google Hangout, entre otros, en caso de que el aspirante sea de otro estado.  Una vez pasado la entrevista el comité decidirá si se admite al programa o si se pospone su admisión y las condiciones que deberá cumplir para su posible admisión. El resultado de este dictamen se dejará asentado en una acta para tal fin. Este deberá ser un proceso de UNA sola iteración. </p></li>
+                </ul>
+            </li>
+            <li>Fase 3:
+                <ul>
+                    <li><p class="justificar" align="justify">Aceptación/rechazo e inscripción: El comité analizará integralmente la solicitud, considerando el examen, el anteproyecto y la entrevista para valorar el cumplimiento del perfil de ingreso. En caso positivo, se extenderá una carta de aceptación al programa. En caso negativo se le enviará una carta explicativa. En ambos casos, esta carta podrá ser firmada únicamente por el Subdirector Académico o por el Director. </p></li>
+                </ul>
+            </li>
+            <li>Fase 4:
+                <ul>
+                    <li><p class="justificar" align="justify">El coordinador del programa procederá con el proceso de inscripción mediante la entrega de documentos pertinentes al Departamento de Servicios Escolares. Se contará un máximo de quince días para cubrir este requisito.</p></li>
+                </ul>
+            </li>   
+        </ul>
+        <p class="justificar" align="justify">La convocatoria se apertura a egresados de maestrías  en Ingenierías en Recursos Renovables, Eléctrica, energías, Mecatrónica, Electrónica, Mecánica, Sistemas Computacionales, Ingeniería Industrial, y otras áreas afines.</p> 
+    </div>
+    <div id="tabs7" class="w3-container city p-1" style="display:none"><br>
+        <h5 style="color: rgb(39, 61,116);"><strong>Misión</strong></h5>
+        <p align="justify" class="p-1 font-weight-bold text-center"><p>Formar de manera integral profesionistas de excelencia en el campo de la ciencia y la tecnología con actitud emprendedora, respeto al medio ambiente y apego a los valores éticos.</p>
+        <h5 style="color: rgb(39, 61,116);"><strong>Visión</strong></h5>
+        <p align="justify" class="p-1 font-weight-bold text-center"><p>Ser una Institución de Excelencia en la Educación Superior Tecnológica del Sureste, comprometida con el desarrollo socioeconómico sustentable de la región.</p>
+    </div>
+    <div id="tabs8" class="w3-container city p-1" style="display:none"><br>
+        <h5 style="color: rgb(39, 61,116);"><strong>Para el Sector Público y Empresarial</strong></h5>
+        <p align="justify" class="p-1" style="margin-left: 15px;">
+            El Doctorado en Ciencias de la Ingeniería, multisede de los I. T. de Hermosillo y Tuxtla Gutierrez interesados en ser protagonistas en el desarrollo nuestras regiones invitamos a los diferentes sectores a exponernos sus necesidades, ideas o inquietudes en el desarrollo proyectos que se encuentren dentro del dominio de nuestros conocimientos.
+            Para lograr lo anterior contamos con la experiencia e infraestructura generada a partir de nuestros programas de maestría y licenciatura. Para mayores informes dirigirse al coordinador del Doctorado.
+        </p>
+        <h5 style="color: rgb(39, 61,116);"><strong>Coordinador</strong></h5>
+        <p class="p-1" style="margin-left: 15px;">Dr. Jorge Luis Camas Anzueto.<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico. jcamas@tuxtla.tecnm.mx<br>
+            Teléfonos. Tel. (961) 61 5 04 61 Ext. 325.<br>
+            Atentamente: Claustro Doctoral, Doctorado en Ciencias de la Ingeniería.
+        </p>
+    </div>
+    <div id="tabs9" class="w3-container city p-1" style="display:none"><br>
+        <h5 style="color: rgb(39, 61,116);"><strong>Coordinador</strong></h5>
+        <p class="p-1" style="margin-left: 15px;">Dr. Jorge Luis Camas Anzueto<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico: <a href="mailto:jcamas@tuxtla.tecnm.mx">jcamas@tuxtla.tecnm.mx</a><br>
+            Teléfonos: <a href="tel:9626150461">(961)-615-0461</a> Ext. 325.
+        </p>
+        <p style="margin-left: 18px;">---------------------------------------------------------</p>
+        <h5 style="color: rgb(39, 61,116);"><strong>Presidente del Claustro Doctoral</strong></h5>
+        <p class="p-1" style="margin-left: 15px;">Dr. Francisco Ronay López Estrada<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico: <a href="mailto:frlopez@tuxtla.tecnm.mx">frlopez@tuxtla.tecnm.mx</a><br>
+            Teléfonos: <a href="tel:9626150461">(961)-615-0461</a> Ext. 325.
+        </p>
+        <p style="margin-left: 18px;">---------------------------------------------------------</p>
+        <h5 style="color: rgb(39, 61,116);"><strong>Secretario del Claustro Doctoral</strong></h5>
+        <p class="p-1" style="margin-left: 15px;">Dr. Héctor Guerra Crespo<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico: <a href="mailto:hguerra@tuxtla.tecnm.mx">hguerra@tuxtla.tecnm.mx</a><br>
+            Teléfonos: <a href="tel:9626150461">(961)-615-0461</a> Ext. 319.
+        </p>
+    </div>
+    <div id="tabs10" class="w3-container city p-1">
+        <h5 class="p-1" style="color: rgb(39, 61,116);"><strong>Documentos y Formatos</strong></h5> 
+        <p>
+            <ul>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/REGLAMENTO_INTERNO_PRESENTACIONES_DCI.pdf'%}" target="_blank">Reglamento interno del posgrado</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Formato_anteproyecto.docx'%}" target="_blank">Formato de anteproyecto de tesis</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Formato_Evaluacion_Desempeno_Becario.doc'%}" target="_blank">Formato para informe semestral de beca </a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="https://www.youtube.com/watch?v=SoNIRiW_y60" target="_blank">Tutorial para subir informe semestral de beca CONACYT</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/04_Formato_Reanudacion_Beca.doc'%}" target="_blank">Formato de reanudación de beca</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Formato_Suspencion_Beca.doc'%}" target="_blank">Formato de suspensión de beca</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/formato_cancelacion_beca.doc'%}" target="_blank">Formato de cancelación de beca</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Formato_Final.docx'%}" target="_blank">Formato de evaluación de comité tutorial final </a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Formato_Parcial.docx'%}" target="_blank">Formato de evaluación de comité parcial de tesis</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Seminario_predoc.docx'%}" target="_blank">Formato de evaluación de seminario predoctoral</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Examen_predoctoral.docx'%}" target="_blank">Formato de evaluación de examen predoctoral</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="http://bit.ly/tesisDCI" target="_blank">Formato de tesis en Latex</a>
+                </p></li>
+                <li><p class="p-1 justificar" align="justify">
+                    <a href="{% static 'download/DocumentosDCI/Tesis_Doctorado.docx'%}" target="_blank">Formato de tesis en word</a>
+                </p></li>
+            </ul>
+        </p>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+    {% include "components/doctorado/footer.html"%}
+{% endblock %}
+
+{% block js %}
+<script>
+    function openCity(cityName) {
+        var i;
+        var x = document.getElementsByClassName("city");
+        for (i = 0; i < x.length; i++) {
+            x[i].style.display = "none";  
+        }
+        document.getElementById(cityName).style.display = "block";  
+    }
+</script>
+{% endblock %}

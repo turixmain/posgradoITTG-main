@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}
+  Maestría en Ciencias en Ingeniería Mecatrónica
+{% endblock %}
+
+{% block navbar %}
+  {% include "components/maestria/navbar.html" %}
+{% endblock %}
+
+{% block carrousel %}
+  {% include "components/maestria/carrousel.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container container-sm container-md container-lg container-xl container-xxl mt-4">
+  {% for posgrado in posgrados %}
+    {% if posgrado.nombre == 'Maestría en Ciencias en Ingeniería Mecatrónica' %}
+    <div class="container container-sm container-md container-lg container-xl container-xxl">
+      <p class="text-descripcion text-3" align="justify">{{ posgrado.descripcion|safe }}</p>
+    </div>
+    {% endif %}
+  {% endfor %}
+  <div class="row mb-4 mt-4" style="margin-left: 50px;">
+    {% for linea in lineas %}
+    <div class="card-deck col-md-6" style="padding: 14px;">
+      <div class="card" align="center" style="background-color: white">
+        <div class="card-header" style="background: rgb(39, 61,116);">
+          <a href="{% url 'linea-investigacion-maestria' pk=linea.id %}"><p class="text-descripcion text-3 card-title text-white">{{ linea.nombre }}</p></a>
+        </div><br>
+        <a href="{% url 'linea-investigacion-maestria' pk=linea.id %}"><img class="fte-t3 card1 card-img-top rou img-fluid" src="{{ linea.imagen_lin.url }}" alt="{{ linea.nombre }}"></a><br>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/maestria/footer.html" %}
+{% endblock %}

@@ -1,0 +1,235 @@
+  @import url(http://allfont.es/allfont.css?fonts=montserrat);
+  
+
+  .body {
+  margin: 0;
+  padding: 0;
+  padding-top: 80px; /* Relleno superior igual a la altura de la cabecera*/
+  }
+  
+
+
+  /* tamaño de letras navbar en tamaño compu*/
+  @media (min-width: 992px) {
+    .fte-t2 {
+      font-family: 'Montserrat', arial;
+      font-size: 12px;
+    }
+
+        /* contenedor */
+  .fte-t1 {
+    font-family: 'Montserrat', arial;
+    font-size: 12px;
+  }
+
+    .fte-t4-d {
+        font-family: 'Montserrat', arial;
+        font-size: 12px;        
+      }
+
+    .text-1 {
+        font-family: 'Montserrat', arial;
+        font-size: 12px;
+      }
+
+    /*Tamaño letras de footer*/
+    .text-2 {
+      font-family: 'Montserrat', arial;
+      font-size: 12px; 
+    }
+
+    /*Tamaño de los iconos del footer*/
+    .fte-t7 {
+      width: 20px;
+      height: 20px;
+    }
+
+    .fte-t7-d{
+        width: 15px;
+        height: 15px;         
+    }
+
+    
+    /*tamaño del div del footer*/
+    .div-f{
+      width: 100%;
+      margin-left: -6px;
+    }
+
+
+    #footer {
+      position:fixed;
+      width: 80%;
+      right: 138px;
+      bottom: 1px;
+      overflow: hidden;
+    }
+
+  }
+
+
+  /* tamaño de letras de navbar en tamaño tablet*/
+  @media (min-width: 576px) and (max-width: 991.98px) {
+      
+    .fte-t2 {
+      font-family: 'Montserrat', arial;
+      font-size: 12px;        
+    }
+
+      .text-1{
+      font-family: 'Montserrat', arial;
+      font-size: 12px;        
+    }
+
+      .text-2{ 
+        font-family: 'Montserrat', arial;
+        font-size: 12px; 
+      }
+
+      .text-3{ 
+        font-family: 'Montserrat', arial;
+        font-size: 12px;
+      }
+      
+      .text-4{ 
+        font-family: 'Montserrat', arial;
+        font-size: 14px;
+      }
+    
+    /*tamaño de imagenes de las card's vista tablet*/
+      .fte-t3{
+        width:180px;
+        height:180px;
+        border-radius:150px;
+      }
+
+      #footer {
+      position:fixed;
+      width: 90%;
+      right: 44px;
+      bottom: -15px;
+      overflow: hidden;        
+    }
+
+    .fte-t4-d {
+        font-family: 'Montserrat', arial;
+        font-size: 12px;        
+      }
+
+      .fte-tab-2 {
+        font-family: 'Montserrat', arial;
+        font-size: 11px;
+      }       
+
+      /*Tamaño de iconos del footer*/
+      .fte-t7 {
+      width: 16px;
+      height: 16px;
+      }
+
+      .fte-t7-d{
+        width: 15px;
+        height: 15px;         
+      }
+
+
+  }
+
+
+  /* tamaño de letras del navbar y todo el contenido en dispositivos */
+  @media (min-width: 360px) and (max-width: 574.98px){
+      
+      .fte-t2 {
+        font-family: 'Montserrat', arial;
+        font-size: 10.5px;
+      }
+
+      .text-2{ 
+        font-family: 'Montserrat', arial;
+        font-size: 7.5px; 
+      }
+
+      .text-3{ 
+        font-family: 'Montserrat', arial;
+        font-size: 7.5px;
+      }
+
+      .fte-t4-d {
+        font-family: 'Montserrat', arial;
+        font-size: 10.5px;        
+      }
+
+      .fte-btn{
+        font-family: 'Montserrat', arial;
+        font-size: 10.5px;
+      }
+
+
+      /*Tamaño de las card modo responsive*/
+      .fte-t7-d{
+        width: 11px;
+        height: 11px;         
+      }
+
+
+      .fte-tab {
+        font-family: 'Montserrat', arial;
+        font-size: 10px;
+      }     
+
+      .fte-tab-2 {
+        font-family: 'Montserrat', arial;
+        font-size: 11px;
+      }       
+
+      .div-1{
+        height: 150px;
+        width: auto;
+        }
+
+      .p-1{
+        font-family: 'Montserrat', arial;
+        font-size: 10px;
+      }
+
+
+  /* Tamaño de imagen del index modo responsive*/
+
+    .img-ind{
+      width: 90%; 
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+
+
+  /* Tamaño de imagenes de las card`s y textos modo responsive*/
+      
+      .text-1{
+        font-size: 10.5px;
+        font-family: 'Montserrat', arial;
+      }
+
+      .fte-t3{
+        width:150px;
+        height:150px;
+        border-radius:150px;
+      }
+  }
+
+  /* Tamaño de imagenes del footer modo responsive*/
+  @media (min-width: 360px) and (max-width: 574.98px) {
+
+      #footer {
+      position:fixed;
+      width: 90%;
+      right: 19px;
+      bottom:0px;
+      overflow: hidden;        
+    }
+    
+    .fte-t7 {
+      width: 10px;
+      height: 10px;
+      }
+  }

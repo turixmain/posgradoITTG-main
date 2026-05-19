@@ -1,0 +1,73 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style3.css' %}">
+{% endblock%}
+
+
+{% block title %}
+  Galería Fotográfica
+{% endblock %}
+
+{% block navbar %}
+  {% include "components/maestria/navbar.html" %}
+{% endblock %}
+
+{% block content %}
+<div class="container mt-4" align="center">
+    <div class="container">
+        <h1 align="center" class="mt-2" style="color: rgb(39, 61,116);"><strong>Sitos de Interés</strong></h1>
+    </div>
+</div>
+<div class="fte-tab table-responsive mt-4 mb-4">
+    <div class="container" align="left">
+        <div class="table-responsive">
+            <table class="table">
+                <thead class="table-active">
+                    <tr class="text-center" style="color: #343a40;">
+                        <th>Enlace</th>
+                    </tr>
+                </thead>
+                <tbody class="container-fluid tableH1">
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://tecnm.mx/">Tecnológico Nacional de México - TecNM</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://www.conacyt.mx/">Consejo Nacional de Ciencia y Tencnología - CONACyT</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://miic.conacyt.mx/generador-view-angular/index.html?application=CVU#/login">Currículum Vitae Único - CONACyT</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://www.conacyt.mx/Convocatorias-y-resultados.html">Convocatorias y Resultados - CONACyT</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://icti.chiapas.gob.mx/">Instituto de Ciencia, Tecnología e Innovación del Estado de Chiapas</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://icti.chiapas.gob.mx/convocatorias/">Convocatorias - ICTI</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://www.dgesui.ses.sep.gob.mx/prodep.htm">Programa para el Desarrollo Profesional Docente, para el tipo Superior - PRODEP</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://promep.sep.gob.mx/ca1/">Cuerpos Académicos - PRODEP</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://www.conricyt.mx/">Consorcio Nacional de Recursos de Información Científica y Tecnológica - CONRICyT</a></STRONG></td>
+                    </tr>
+                    <tr class="table">
+                        <td class="text-center"><STRONG><a href="https://mjl.clarivate.com/home?PC=master">Información de Journals en el Citation Index - Thompson Reuters</a></STRONG></td>
+                    </tr>
+                </tbody>
+            </table>    
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+  {% include "components/maestria/footer.html" %}
+{% endblock %}

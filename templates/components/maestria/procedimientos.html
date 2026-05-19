@@ -1,0 +1,103 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Procedimientos
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+{% block navbar %}
+    {% include 'components/maestria/navbar.html' %}
+{% endblock%}
+
+{% block content %}
+<div class="container mt-4">
+  <div class="w3-container city p-1">
+    <p class="p-1">
+      <p class="p-1" style="color: rgb(39, 61,116);"><strong>Requisitos y antecedentes de ingreso de los candidatos</strong></p>
+      <p>
+        <p class="p-1 justificar" align="justify">
+          La recepción de solicitudes se realiza durante todo el año, y el coordinador 
+          de la maestría revisa que la documentación cumpla con los siguientes 
+          requisitos de ingreso que se solicitan:    
+        </p>
+        <ul>
+          <li>
+            Título de Licenciatura y cédula profesional o acta de examen profesional</li>
+          <li>
+            Certificado de estudios de licenciatura con un promedio general mínimo de 8.0 o equivalente.</li>
+          <li>
+            Acreditar el examen CENEVAL EXANI-III.</li>
+          <li>
+            Currículum vitae con comprobantes.</li>
+          <li>
+            Comprensión del idioma inglés principalmente de artículos técnicos-científicos.</li>
+          <li>
+            Solicitud de ingreso con exposición de motivos.</li>
+          <li>
+            Aprobar la entrevista de diagnóstico con el consejo de posgrado de la MCIM.</li>
+          <li>
+            Dos cartas de recomendación académicas de profesores y/o investigadores</li>
+        </ul>
+        <p class="p-1 justificar" align="justify">
+          Una vez que se ha notificado la aceptación al aspirante debe entregar la documentación siguiente:
+        </p>
+        <ul>
+          <li>Acta de nacimiento</li>
+          <li>Título de licenciatura</li>
+          <li>Certificado de estudios profesionales o constancia de estudios con calificaciones y promedio final</li>
+          <li>Certificado médico de instituciones públicas</li>
+          <li>Credencial de elector</li>
+          <li>CURP</li>
+          <li>Comprobante de  domicilio</li>
+          <li>6 fotografías tamaño infantil de frente</li>
+          <li>Llenar solicitud de nuevo ingreso</li>
+        </ul>
+        <p class="p-1 justificar" align="justify">
+          Presentar los originales de los documentos que correspondan y dos copias de cada uno.
+        </p>
+      </p>
+    </p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <p>
+      <p class="p-1" style="color: rgb(39, 61,116);"><strong>Requisitos de la permanencia en el programa</strong></p>
+      <p>
+        <ul>
+          <li>Inscribirse en el periodo correspondiente durante todo el programa, hasta la obtención del grado.</li>
+          <li>Dedicar tiempo completo para la realización de sus estudios.</li>
+          <li>No abandonar sus estudios mayor a seis meses sin previa autorización del Jefe de la DEPI.</li>
+          <li>Las bajas temporales y definitivas serán solicitadas al coordinador y valoradas por el consejo académico del Posgrado.</li>
+          <li>La calificación mínima aprobatoria será de 70, sin embargo deberá mantener un promedio general mínimo de 80.</li>
+          <li>No reprobar en dos ocasiones una misma asignatura o reprobar dos asignaturas diferentes.</li>
+          <li>Presentar los avances de su proyecto de investigación cuando sea requerido por el comité tutorial, avalado por el director de tesis.</li>
+          <li>Presentar y aprobar sus seminarios de protocolo, avances y terminación, además de sus respectivos comités tutoriales.</li>
+          <li>Observar las disposiciones reglamentarias para el buen funcionamiento de la institución y no ser sujeto de sanciones por parte de las autoridades competentes.</li>
+          <li>Todas las demás estipuladas en el normativo del TecNM y el reglamento interno.</li>
+        </ul>
+      </p>
+    </p>
+    <p>-----------------------------------------------------------------------------------------------------</p>
+    <p>
+      <p class="p-1" style="color: rgb(39, 61,116);"><strong>Requisitos para la obtención de grado académico</strong></p>
+      <p>
+        <ul>
+          <li>Cubrir el 100% de los créditos del programa.</li>
+          <li>Obtener un promedio mínimo general de 80/100 (ochenta).</li>
+          <li>Aprobar el examen de grado.</li>
+          <li>Cumplir con las disposiciones indicadas en el manual de operación de estudios de posgrado del TecNM.</li>
+        </ul>
+      </p>
+    </p>
+  </div>
+</div>
+{% endblock%}
+
+{% block footer %}
+    {% include 'components/maestria/footer.html'%}
+{% endblock %}

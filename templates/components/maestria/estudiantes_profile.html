@@ -1,0 +1,67 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Perfil de {{ estudiante.nombre }} {{ estudiante.apellidos }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+{% block navbar %}
+    {% include 'components/maestria/navbar.html' %}
+{% endblock%}
+
+{% block content %}
+<div class="container emp-profile">
+    <div class="row justify-content-center align-items-center">
+        <div class="container">
+            <div class="card">
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-3 col-sm-3 col-xs-3 col-lg-3">
+                            {% if estudiante.fotografia %}
+                            <div class="profile-img">
+                                <img class="mb-4 rounded mx-auto d-block" width="200" height="200" src="{{ estudiante.fotografia.url }}" alt="{{ estudiante.nombre }}"/>
+                            </div>
+                            {% endif %}
+                        </div>
+                        <div class="col-md-9 col-sm-9 col-lg-9">
+                            <div class="profile-head">
+                                <h5 class="p-1" style="color: rgb(39, 61,116); margin-left: -5px;"><strong>{{ estudiante.nombre }} {{estudiante.apellidos }}</strong></h5> 
+                                <p class="text-3" style="margin-top: 1px;"><a style="color:black;" href="{% if estudiante.tesis_estudiante.documento %} {{ estudiante.tesis_estudiante.documento.url }} {% if estudiante.tesis_estudiante.link_tesis %} {{ estudiante.tesis_estudiante.link_tesis }} {% endif %} {% else %} # {% endif %}">{% if estudiante.tesis_estudiante %} {{ estudiante.tesis_estudiante }} {% endif %}</a></p>
+                            </div>
+                            <p class="text-3">
+                                {% if estudiante.email %}
+                                <i class="far fa-envelope fa-sm" style="margin-right:10px;"></i><a class="text-3 fte-t7" href="mailto:{{ estudiante.email }}" style="margin-right:10px;">{{ estudiante.email }}</a>
+                                {% endif %}
+                                {% if estudiante.perfil_researchgate %}
+                                <i class="far fa-user-circle fa-sm"   style="margin-right:10px;"></i><a class="text-3 fte-t7" href="{{ estudiante.perfil_researchgate }}" style="margin-right:10px;">Researchgate</a>
+                                {% endif %}
+                                {% if estudiante.scholar_google %}
+                                    <i class="far fa-user-circle fa-sm" style="margin-right:10px;"></i><a class="text-3 fte-t7" href="{{ estudiante.scholar_google}}" >Scholar Google</a>
+                                {% endif %}
+                            </p>
+                            {% if n.documento %}
+                                <div>
+                                    <p class="text-3" align="justify">{{ estudiante.tesis_estudiante.descripcion|safe }}</p>
+                                    <strong><a href="{{ estudiante.tesis_estudiante.link_tesis }}" target="_blank" style="color: rgb(39, 61,116); align:right;">Descargar Tesis Completa</a></strong>
+                                </div>
+                            {% endif %}
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block footer %}
+    {% include 'components/maestria/footer.html'%}
+{% endblock %}

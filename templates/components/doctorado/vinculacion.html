@@ -1,0 +1,46 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Vinculación
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+{% block navbar %}
+    {% include 'components/doctorado/navbar.html' %}
+{% endblock%}
+
+{% block content %}
+<div class="container emp-profile">
+    <div class="row justify-content-center align-items-center">
+        <div class="container">
+            <div class="text-left text-2" style="margin-left: 15px;">
+                <h5 style="color: rgb(39, 61,116);"><strong>Vinculación</strong></h5>
+            </div>
+            <br>
+            <p class="p-1" style="margin-left: 15px;" style="color: rgb(39, 61,116);">Para el Sector Público y Empresarial.</p>
+            <p align="justify" class="p-1" style="margin-left: 15px;">El Doctorado en Ciencias de la Ingeniería multisede de los I. T. de Hermosillo y Tuxtla Gutierrez interesados en ser protagonistas en el desarrollo nuestras regiones invitamos a los diferentes sectores a exponernos sus necesidades, ideas o inquietudes en el desarrollo proyectos que se encuentren dentro del dominio de nuestros conocimientos.
+                Para lograr lo anterior contamos con la experiencia e infraestructura generada a partir de nuestros programas de maestría y licenciatura. Para mayores informes dirigirse al coordinador del Doctorado.</p><br>
+            <div class="text-left text-2" style="margin-left: 15px;">
+                <h5 style="color: rgb(39, 61,116);"><strong>Coordinador</strong></h5><br>
+            </div>
+            <p class="p-1" style="margin-left: 15px;">Dr. Jorge Luis Camas Anzueto.<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico: <a href="mailto:posgrado.dci@tuxtla.tecnm.mx">posgrado.dci@tuxtla.tecnm.mx</a><br>
+            Teléfonos: Tel. (961) 61 5 04 61 Ext. 325.<br>
+            Atentamente: Claustro Doctoral, Doctorado en Ciencias de la Ingeniería.</p>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block footer %}
+    {% include 'components/doctorado/footer.html'%}
+{% endblock %}

@@ -1,0 +1,45 @@
+{% extends "base.html" %}
+
+{% block navbar%}
+    {% include 'components/maestria/navbar.html' %}
+{% endblock %}
+
+{% block content %}
+<br>
+<div class="container">
+    <div class="fte-tab table-responsive table-responsive-sm table-responsive-md table-responsive-lg" style="margin-top:50px; background:white;">
+        <table class="table">
+            <thead class="table-active">
+                <tr class="text-center" style="color: #343a40;">
+                    <th>Estudiante</th>
+                    <th>Docente</th>
+                    <th>Generación</th>
+                </tr>
+            </thead>
+            <tbody class="container-fluid tableH1">
+                {% for tutoria in tutorias %}
+                <tr class="table">
+                    <td class="text-center"><a><strong>{{ tutoria.estudiante.nombre }} {{ tutoria.estudiante.apellidos }}</strong></a></td>
+                    <td class="text-center"><STRONG>{{ tutoria.docente.grado }}. {{ tutoria.docente.nombre }} {{ tutoria.docente.apellidos }}</STRONG></td>
+                    <td class="text-center"><STRONG>{{ tutoria.generacion.nombre }}</STRONG></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>  
+    </div>
+</div>
+
+{% endblock %}
+
+{% block footer %}
+    {% include 'components/maestria/footer.html' %}
+{% endblock%}
+
+{% block css%}
+    <style type="text/css">
+      .tableH1 tr:hover {
+        background-color: #F5B041;
+        cursor: pointer;
+      }
+    </style>
+{% endblock%}

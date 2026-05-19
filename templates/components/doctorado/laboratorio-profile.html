@@ -1,0 +1,91 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Laboratorio de {{ laboratorio.nombre }}
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+{% block navbar %}
+    {% include 'components/doctorado/navbar.html' %}
+{% endblock%}
+
+{% block content %}
+<div class="container emp-profile">
+    <div class="row justify-content-center align-items-center">
+        <div class="container">
+            <!-- Carousel Navigation -->
+            <div id="carousel-thumbs" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner container-img">
+                    <div class="carousel-item mb-5 active">
+                        {% if laboratorio.imagen %}
+                        <div id="carousel-selector-0" class="thumb col-12" data-target="#carousel-thumbs" data-slide-to="0">
+                            <img src="{{ laboratorio.imagen.url }}" width="100%" height="75%" class="img-fluid carousel-thumbs" alt="...">
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="carousel-item mb-5">
+                        {% if laboratorio.imagen_2 %}
+                        <div id="carousel-selector-1" class="thumb col-12" data-target="#carousel-thumbs" data-slide-to="1">
+                            <img src="{{ laboratorio.imagen_2.url }}" width="100%" height="75%" class="img-fluid carousel-thumbs" alt="...">
+                        </div>
+                        {% endif %}
+                    </div>
+                    <div class="carousel-item mb-5">
+                        {% if laboratorio.imagen_3 %}
+                        <div id="carousel-selector-2" class="thumb col-12" data-target="#carousel-thumbs" data-slide-to="2">
+                            <img src="{{ laboratorio.imagen_3.url }}" width="100%" height="75%" class="img-fluid carousel-thumbs" alt="...">
+                        </div>
+                        {% endif %}
+                    </div>
+                </div>
+                <a class="carousel-control-prev" href="#carousel-thumbs" role="button" data-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="carousel-control-next" href="#carousel-thumbs" role="button" data-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
+            </div>
+        </div> <!-- /container -->
+        <div class="container mt-5">
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-lg-12">
+                    <div class="profile-head">
+                        <h5 class="p-1 mb-3" style="color: rgb(39, 61,116);" align="center"><strong>Laboratorio de {{ laboratorio.nombre }}</strong></h5> 
+                    </div>
+                    <div>
+                        <p class="text-3" align="justify">{{ laboratorio.descripcion_1|safe }}</p>
+                        {% if laboratorio.imagen_descripcion %}
+                        <div class="profile-img">
+                            <a data-toggle="modal" data-target="#{{ laboratorio.imagen_descripcion }}">
+                                <img class="mb-4 rounded mx-auto d-block grid-item" src="{{ laboratorio.imagen_descripcion.url }}" alt="{{ laboratorio.nombre }}"/>
+                            </a>
+                        </div>
+                        <div class="modal fade" id="{{ laboratorio.imagen_descripcion }}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                            <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
+                                <img class="rounded img-fluid" src="{{ laboratorio.imagen_descripcion.url }}" alt="{{ laboratorio.nombre }}" />
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% if laboratorio.descripcion_2 %}
+                            <p class="text-3" align="justify">{{ laboratorio.descripcion_2|safe }}</p>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block footer %}
+    {% include 'components/doctorado/footer.html'%}
+{% endblock %}

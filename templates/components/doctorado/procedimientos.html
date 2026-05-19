@@ -1,0 +1,65 @@
+{% extends "base.html" %}
+
+{% load static %}
+
+{% block title %}
+  Procedimientos
+{% endblock %}
+
+{% block css %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/profile.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/signin.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+{% endblock%}
+
+{% block navbar %}
+    {% include 'components/doctorado/navbar.html' %}
+{% endblock%}
+
+{% block content %}
+<div class="container emp-profile">
+    <div class="row justify-content-center align-items-center">
+        <div class="container">
+          <div class="content-fluid mb-4">
+            <h5 style="color: rgb(39, 61,116); margin-left: 20px;"><strong>Procedimientos</strong></h5>
+          </div>
+  
+          <div class="content-fluid">
+            <p class="p-1" style="margin-left: 15px; color: rgb(39, 61,116);"><strong>Coordinador</strong><br></p>
+            <p class="p-1" style="margin-left: 15px;">Dr. Jorge Luis Camas Anzueto<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico: <strong>jcamas@tuxtla.tecnm.mx</strong><br>
+            Teléfonos: (961) 61 5 04 61 Ext. 325.</p>
+          </div>
+          <p style="margin-left: 18px;">---------------------------------------------------------</p>
+          
+
+          <div class="content-fluid">
+            <p class="p-1" style="margin-left: 15px; color: rgb(39, 61,116);"><strong>Presidente del Claustro Doctoral</strong><br></p>
+            <p class="p-1" style="margin-left: 15px;">Dr. Ildeberto de los Santos Ruiz<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico: <strong>ildeberto.dr@tuxtla.tecnm.mx</strong><br>
+            Teléfonos: (961) 61 5 04 61 Ext. 325.</p>
+          </div>
+          <p style="margin-left: 18px;">---------------------------------------------------------</p>
+
+
+          <div class="content-fluid">
+            <p class="p-1" style="margin-left: 15px; color: rgb(39, 61,116);"><strong>Secretario del Claustro Doctoral</strong><br></p>
+            <p class="p-1" style="margin-left: 15px;">Dr. Samuel Gómez Peñate<br>
+            I.T. de Tuxtla Gutiérrez.<br>
+            Carretera Panamericana km 1080. Tuxtla Gutiérrez, Chiapas. C.P. 29000<br>
+            Correo electrónico: <strong>samuel.gp@tuxtla.tecnm.mx</strong><br>
+            Teléfonos: (961) 61 5 04 61 Ext. 319.</p>
+          </div>
+          <p style="margin-left: 18px;">---------------------------------------------------------</p>
+        </div>
+    </div>
+</div>
+{% endblock%}
+
+{% block footer %}
+    {% include 'components/doctorado/footer.html'%}
+{% endblock %}
