@@ -30,3 +30,4 @@ whitenoise
 # ── Frontend extras ───────────────────────────────────────────
 fontawesomefree==6.6.0
  
+dj-database-url
